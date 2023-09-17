@@ -1,0 +1,8 @@
+/dist/*
+/public/*
+/src/assets/aliFont/*
+/node_modules/**
+.local
+**/*.svg
+**/*.sh
+index.html

@@ -1,0 +1,26 @@
+@mixin clear {
+
+  &::before,
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin clear-space {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,4 @@
+redux中间件
+    + redux-logger 每一次派发，在控制台输出派发日志，方便对redux的操作进行调试。输出的内容：派发之前的状态、派发的行为、派发后的状态
+    + redux-thunk/redux-promise 实现异步派发（每一次派发的时候，需要传递给reducer的action对象中的内容，是需要异步获取的）
+    + redux-saga
