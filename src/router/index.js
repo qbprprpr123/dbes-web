@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import routes from './routes';
 
 // 统一路由配置
@@ -7,8 +7,18 @@ const Element = (props) => {
   const { component: Component, meta } = props;
   // 登录态校验
   // 修改页面title
-  const { title = 'dbes-web' } = meta || {};
+  const { requiredLogin = true, title = 'dbes-web' } = meta || {};
   document.title = title;
+  console.log('requiredLogin =>', requiredLogin);
+  if (requiredLogin) {
+    return (
+      <Navigate
+        to={{
+          pathname: '/login',
+        }}
+      />
+    );
+  }
 
   // 获取路由信息传递给组件
   const params = useParams();

@@ -1,4 +1,101 @@
-#test {
-  margin-top: 10px;
-  color: #ddd;
+.ak-login-box {
+  &.ak-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-width: 1200px;
+    min-height: 700px;
+    justify-content: center;
+    align-items: center;
+    background: url('~@/assets/images/login/background-login.png') no-repeat center center #fff;
+    background-size: 100% 100%;
+
+    .table-container {
+      flex: none;
+    }
+  }
+
+  .ak-login-wrapper {
+    width: 1200px;
+    height: 590px;
+    box-sizing: border-box;
+    padding-right: 66px;
+    padding-left: 786px;
+    border: 2px solid #1c2840;
+    border-radius: 4px;
+    background: url('~@/assets/images/login/panel-image.png') no-repeat left center #ffffff;
+    background-size: 720px 100%;
+    box-shadow: 0 2px 30px 0 rgb(176 200 255 / 50%);
+  }
+
+  .ak-login-form-title {
+    height: 50px;
+    margin-top: 60px;
+    line-height: 50px;
+    color: #072042;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    background: url('~@/assets/images/login/background-title.png') no-repeat center center;
+  }
+
+  .ak-login-form-tabs {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+  }
+  
+  .ak-login-tab-item {
+    position: relative;
+    flex: 1;
+    width: 0;
+    height: 27px;
+    box-sizing: border-box;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgb(27 72 155 / 16%);
+    line-height: 21px;
+    color: #b9bfc7;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+  
+    &.is-active {
+      border-bottom-color: #2f6fe5;
+      color: #2f6fe5;
+    }
+  }
+
+  .ak-login-form-account {
+    margin-top: 30px;
+
+    .ant-form-item-control-input {
+      min-height: 50px;
+    }
+
+    .ant-input {
+      line-height: 2.86;
+    }
+
+    .ak-login-verify-error {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      color: #999;
+      background: #d5dee8;
+      font-size: 14px;
+    }
+
+    .login-form-button {
+      width: 100%;
+      margin-top: 40px;
+      height: 50px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
 }

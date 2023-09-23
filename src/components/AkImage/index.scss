@@ -1,0 +1,27 @@
+%size {
+  width: 100%;
+  height: 100%;
+}
+
+.ak-image-box {
+  @extend %size;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  .ak-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @extend %size;
+
+    .ak-image-loading {
+      font-size: 24px;
+      color: #909399;
+    }
+    
+    .ak-image-inner {
+      @extend %size;
+    }
+  }
+}

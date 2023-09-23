@@ -2,7 +2,6 @@
 
 .ak-container {
   display: flex;
-  min-width: 1100px;
   min-height: calc(100% - 20px);
   overflow-y: visible;
   flex-direction: row;
@@ -10,8 +9,6 @@
 
   .table-container {
     flex: 1;
-    min-width: 800px;
-    padding: 20px;
   }
 
   @include clear;
