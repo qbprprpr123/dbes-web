@@ -1,12 +1,21 @@
 import LoginPage from '../views/login';
+import DefaultLayoutsPage from '../views/layouts/default';
 import DatabaseInfoPage from '../views/database/info';
 
 const routes = [
   {
     path: '/',
     name: 'DefaultLayoutPage',
-    component: DatabaseInfoPage,
-    meta: { requiredLogin: false, title: '数据源管理' },
+    component: DefaultLayoutsPage,
+    children: [
+      {
+        path: 'database/info',
+        name: 'DataBaseInfoPage',
+        component: DatabaseInfoPage,
+        meta: { requiredLogin: false, title: '数据库管理' },
+      },
+    ],
+    meta: { requiredLogin: false },
   },
   {
     path: '/login',

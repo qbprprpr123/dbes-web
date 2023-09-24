@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Form, Input, Button, Row, Col } from 'antd';
+import { useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
 import { uuid } from '@/assets/common/utils';
-import { getCheckCodeUrl } from '@/service/request/login';
+import { userLogin } from '@/store/features/userSlice';
 import './index.scss';
+import { getCheckCodeUrl } from '@/service/request/login';
 import AkImage from '../../components/AkImage';
 import AkContainer from '../../components/AkContainer';
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
   const [codeId, setCodeId] = useState('');
 
   useEffect(() => {
@@ -19,8 +23,15 @@ const LoginPage = () => {
     console.log('???');
     setCodeId(getCheckCodeUrl(uuid()));
   };
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     console.log('Success:', values);
+    try {
+      const res = await dispatch(userLogin(values)).then(unwrapResult);
+      console.log('res =>', res);
+    } catch (e) {
+      console.log('catch =>', e);
+      return e;
+    }
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
